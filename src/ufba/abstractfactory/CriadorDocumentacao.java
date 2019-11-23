@@ -10,14 +10,6 @@ public abstract class CriadorDocumentacao {
 	    this.fabrica = fabrica;
 	}
 
-    public FabricaDocumentacao getFabrica() {
-        return this.fabrica;
-    }
-
-    public void setFactory(FabricaDocumentacao fabrica) {
-        this.fabrica = fabrica;
-    }
-
     public Cabecalho gerarCabecalho() {
         Cabecalho cabecalho = this.fabrica.criarCabecalho();
         cabecalho.setTitulo("Padroes de projeto");
@@ -36,7 +28,16 @@ public abstract class CriadorDocumentacao {
         rodape.setData(new Date());
         return rodape;
     }
-	
+
+    public FabricaDocumentacao getFabrica() {
+        return this.fabrica;
+    }
+
+    public void setFabrica(FabricaDocumentacao fabrica) {
+        this.fabrica = fabrica;
+    }
+
+    
 }
 
 	

@@ -18,7 +18,7 @@ public class Main {
 	        System.out.println(rodape.getOutput());
 	        
 	        FabricaDocumentacao fabricaMarkdown = new FabricaMarkdown();
-	        criador.setFactory(fabricaMarkdown);
+	        criador.setFabrica(fabricaMarkdown);
 	        
 	        cabecalho = criador.gerarCabecalho();
 	        corpo = criador.gerarCorpo();
