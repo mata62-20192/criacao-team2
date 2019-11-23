@@ -1,5 +1,7 @@
 package ufba.abstractfactory;
 
+import ufba.elementos.*;
+
 public class Main {
 
 	 public static void main(String[] Args) {
@@ -7,25 +9,27 @@ public class Main {
 	        CriadorDocumentacao criador = new CriadorDocumentacao(fabricaHTML) {
 			};
 	        
-	        Inicio inicio = criador.gerarInicio();
-	        Meio meio = criador.gerarMeio();
-	        Fim fim = criador.gerarFim();
-	        
-	        System.out.println(inicio.getOutput());
-	        System.out.println(meio.getOutput());
-	        System.out.println(meio.getOutput());
+			Cabecalho cabecalho = criador.gerarCabecalho();
+	        Corpo corpo = criador.gerarCorpo();
+	        Rodape rodape = criador.gerarRodape();
+        
+	        System.out.println(cabecalho.getOutput());
+	        System.out.println(corpo.getOutput());
+	        System.out.println(rodape.getOutput());
 	        
 	        FabricaDocumentacao fabricaMarkdown = new FabricaMarkdown();
 	        criador.setFactory(fabricaMarkdown);
 	        
-	        inicio = criador.gerarInicio();
-	        meio = criador.gerarMeio();
-	        fim = criador.gerarFim();
+	        cabecalho = criador.gerarCabecalho();
+	        corpo = criador.gerarCorpo();
+	        rodape = criador.gerarRodape();
 	        
-	        System.out.println(inicio.getOutput());
-	        System.out.println(meio.getOutput());
-	        System.out.println(fim.getOutput());
+	        System.out.println(cabecalho.getOutput());
+	        System.out.println(corpo.getOutput());
+	        System.out.println(rodape.getOutput());
 	        
+	        
+	    
 	        
 	    }
 
