@@ -1,18 +1,22 @@
 package ufba.abstractfactory;
 
+import ufba.elementos.*;
+import ufba.elementos.html.*;
+
 public class FabricaHTML extends FabricaDocumentacao{
-	 public FabricaHTML() {
-	 }
+	public FabricaHTML() {
+	
+	}
 	 
-    public Inicio criarInicio() {
-        return new InicioHTML();
+    public Cabecalho criarCabecalho() {
+        return new CabecalhoHTML();
     }
 
-    public Meio criarMeio() {
-        return new MeioHTML();
+    public Corpo criarCorpo() {
+        return new CorpoHTML();
     }
 
-    public Fim criarFim() {
-        return new FimHTML();
+    public Rodape criarRodape() {
+        return new RodapeHTML();
     }
 }

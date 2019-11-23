@@ -1,18 +1,22 @@
 package ufba.abstractfactory;
 
+import ufba.elementos.*;
+import ufba.elementos.markdown.*;
+
 public class FabricaMarkdown extends FabricaDocumentacao{
-	 public FabricaMarkdown() {
-	 }
+	public FabricaMarkdown() {
+	
+	}
 	 
-    public Inicio criarInicio() {
-        return new InicioMarkdown();
+    public Cabecalho criarCabecalho() {
+        return new CabecalhoMarkdown();
     }
 
-    public Meio criarMeio() {
-        return new MeioMarkdown();
+    public Corpo criarCorpo() {
+        return new CorpoMarkdown();
     }
 
-    public Fim criarFim() {
-        return new FimMarkdown();
+    public Rodape criarRodape() {
+        return new RodapeMarkdown();
     }
 }

@@ -1,5 +1,8 @@
 package ufba.abstractfactory;
 
+import java.util.Date;
+import ufba.elementos.*;
+
 public abstract class CriadorDocumentacao {
 	private FabricaDocumentacao fabrica;
 	
@@ -15,23 +18,23 @@ public abstract class CriadorDocumentacao {
         this.fabrica = fabrica;
     }
 
-    public Inicio gerarInicio() {
-    	Inicio inicio = this.fabrica.criarInicio();
-    	inicio.setTitulo();
-    	inicio.setEmpresa();
-        return inicio;
+    public Cabecalho gerarCabecalho() {
+        Cabecalho cabecalho = this.fabrica.criarCabecalho();
+        cabecalho.setTitulo("Padroes de projeto");
+        cabecalho.setEmpresa("Universidade Federal da Bahia");
+        return cabecalho;
     }
 
-    public Meio gerarMeio() {
-    	Meio meio = this.fabrica.criarMeio();
-    	meio.setTexto();
-        return meio;
+    public Corpo gerarCorpo() {
+        Corpo corpo = this.fabrica.criarCorpo();
+        corpo.setTexto("Aula de padroes de projeto na disciplina Engenharia de Software I.");
+        return corpo;
     }
 
-    public Fim gerarFim() {
-    	Fim fim = this.fabrica.criarFim();
-    	fim.setData();
-        return fim;
+    public Rodape gerarRodape() {
+        Rodape rodape = this.fabrica.criarRodape();
+        rodape.setData(new Date());
+        return rodape;
     }
 	
 }
