@@ -2,6 +2,12 @@
 <system>
 	<pattern name="Factory Method">
 		<instance>
+			<role name="Creator" element="ufba.abstractfactory.FabricaDocumentacao" />
+			<role name="FactoryMethod()" element="ufba.abstractfactory.FabricaDocumentacao::criarInicio():ufba.abstractfactory.Inicio" />
+			<role name="FactoryMethod()" element="ufba.abstractfactory.FabricaDocumentacao::criarMeio():ufba.abstractfactory.Meio" />
+			<role name="FactoryMethod()" element="ufba.abstractfactory.FabricaDocumentacao::criarFim():ufba.abstractfactory.Fim" />
+		</instance>
+		<instance>
 			<role name="Creator" element="ufba.factorymethod.CriadorDocumentacao" />
 			<role name="FactoryMethod()" element="ufba.factorymethod.CriadorDocumentacao::criaDocumento():ufba.factorymethod.Documento" />
 		</instance>
@@ -15,7 +21,16 @@
 	<pattern name="Observer" />
 	<pattern name="State" />
 	<pattern name="Strategy" />
-	<pattern name="Bridge" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="ufba.abstractfactory.CriadorDocumentacao" />
+			<role name="Implementor" element="ufba.abstractfactory.FabricaDocumentacao" />
+			<role name="implementor" element="ufba.abstractfactory.CriadorDocumentacao::fabrica:ufba.abstractfactory.FabricaDocumentacao" />
+			<role name="Operation()" element="ufba.abstractfactory.CriadorDocumentacao::gerarInicio():ufba.abstractfactory.Inicio" />
+			<role name="Operation()" element="ufba.abstractfactory.CriadorDocumentacao::gerarMeio():ufba.abstractfactory.Meio" />
+			<role name="Operation()" element="ufba.abstractfactory.CriadorDocumentacao::gerarFim():ufba.abstractfactory.Fim" />
+		</instance>
+	</pattern>
 	<pattern name="Template Method" />
 	<pattern name="Visitor" />
 	<pattern name="Proxy" />
